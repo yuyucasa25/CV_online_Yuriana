@@ -1,0 +1,27 @@
+/* css/styles.css */
+:root{
+  --bg: #fff;
+  --text: #222;
+  --accent: #d6336c;
+}
+*{box-sizing:border-box}
+body{
+  font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+  margin:0;
+  padding:20px;
+  background:var(--bg);
+  color:var(--text);
+  line-height:1.4;
+}
+header{border-bottom:2px solid #eee;padding-bottom:12px;margin-bottom:16px}
+h1{margin:0 0 6px 0}
+button{
+  padding:8px 12px;
+  border:0;
+  background:var(--accent);
+  color:#fff;
+  border-radius:6px;
+  cursor:pointer;
+}
+section{margin-bottom:18px}
+footer{margin-top:24px;font-size:0.9rem;color:#666}
