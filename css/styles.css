@@ -1,27 +1,698 @@
-/* css/styles.css */
-:root{
-  --bg: #fff;
-  --text: #222;
-  --accent: #d6336c;
+
+
+/* 🌸 GENERAL STYLES */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
 }
-*{box-sizing:border-box}
-body{
-  font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
-  margin:0;
-  padding:20px;
-  background:var(--bg);
-  color:var(--text);
-  line-height:1.4;
+
+:root {
+  --color-bg1: ##845DEB;
+  --color-bg2: ##F1B7FF;
+  --color-accent: #ff53c0;
+  --color-white: #ffffff;
 }
-header{border-bottom:2px solid #eee;padding-bottom:12px;margin-bottom:16px}
-h1{margin:0 0 6px 0}
-button{
-  padding:8px 12px;
-  border:0;
-  background:var(--accent);
-  color:#fff;
-  border-radius:6px;
-  cursor:pointer;
+
+body {
+  background: linear-gradient(to bottom, #845DEB, #F1B7FF);
+  color: #fff;
+  overflow-x: hidden;
+  min-height: 100vh;
 }
-section{margin-bottom:18px}
-footer{margin-top:24px;font-size:0.9rem;color:#666}
+
+
+/* 🌈 NAVBAR */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 60px;
+  position: fixed;
+  width: 100%;
+  top: 0;
+  background: transparent;
+  z-index: 100;
+}
+
+.logo {
+  font-weight: 700;
+  font-size: 1.6rem;
+  color: var(--color-white);
+  letter-spacing: 1px;
+}
+
+.logo span {
+  background: var(--color-accent);
+  color: var(--color-white);
+  padding: 3px 6px;
+  border-radius: 5px;
+}
+
+nav ul {
+  display: flex;
+  gap: 35px;
+  list-style: none;
+}
+
+nav ul li a {
+  color: var(--color-white);
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 1.2rem;
+  transition: color 0.3s ease;
+}
+
+nav ul li a.active,
+nav ul li a:hover {
+  color: var(--color-accent);
+}
+
+/* 💜 HOME SECTION */
+
+
+@font-face {
+  font-family: "HugMeTight";
+  src: url("../assets/fonts/Hug Me Tight - TTF.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Mont";
+  src: url("../assets/fonts/Mont-HeavyDEMO.otf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+.home {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 100vh;
+  padding: 100px 80px 0;
+  gap: 50px;
+}
+
+.sparkles {
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle, var(--color-white) 1px, transparent 1px);
+  background-size: 60px 60px;
+  animation: moveSparkles 5s linear infinite;
+  opacity: 0.5;
+  z-index: 0;
+  pointer-events: none;
+}
+
+@keyframes moveSparkles {
+  from {
+    background-position: 0 0;
+  }
+  to {
+    background-position: 120px 120px;
+  }
+}
+
+.home-text {
+  max-width: 50%;
+  animation: fadeInLeft 1.5s ease forwards;
+}
+
+.home-text h2 {
+  font-family: "HugMeTight", sans-serif;
+  font-size: 1.6rem;
+  font-weight: 600;
+  margin-bottom: 10px;
+  letter-spacing: 3.5px;
+}
+
+.home-text h1 {
+   font-family: "Mont", sans-serif;
+  font-size: 3.5rem;
+  font-weight: 700;
+  color: var(--color-accent);
+  margin-bottom: 15px;
+  overflow: hidden; /* oculta texto mientras se "escribe" */
+  border-right: 3px solid var(--color-accent); /* el cursor */
+  white-space: nowrap; /* evita saltos de línea */
+  width: 0; /* punto de inicio */
+  animation: typing 2s steps(16, end) forwards, blink 0.6s step-end infinite;
+}
+/* Efecto escribir */
+@keyframes typing {
+  from { width: 0; }
+  to { width: 15ch; } /* Ajusta el número según la cantidad de caracteres */
+}
+
+/* Efecto cursor parpadeando */
+@keyframes blink {
+  from, to { border-color: transparent; }
+  50% { border-color: var(--color-accent); }
+}
+
+.home-text h3 {
+  font-size: 1.4rem;
+  font-weight: 500;
+  margin-bottom: 20px;
+}
+
+.home-text p {
+  font-size: 1.2rem;
+  line-height: 1.6;
+  margin-bottom: 35px;
+}
+
+/* 🎀 BUTTON */
+.btn {
+  position: relative;
+  display: inline-block;
+  background: var(--color-accent);
+  color: var(--color-white);
+  padding: 14px 30px;
+  border-radius: 30px;
+  text-decoration: none;
+  font-weight: 600;
+  overflow: hidden;
+  transition: all 0.3s ease;
+  box-shadow: 0 0 15px rgba(255, 83, 192, 0.5);
+  border: 2px solid transparent;
+}
+
+/* 🔮 Efecto de brillo */
+.btn::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: 30px;
+  padding: 2px;
+  background: linear-gradient(45deg, #ff53c0, #e384ff, #ff53c0);
+  background-size: 200%;
+  z-index: -1;
+  filter: blur(2px);
+  opacity: 0;
+  transition: opacity 0.4s ease;
+  animation: glowMove 3s linear infinite;
+}
+
+.btn:hover::before {
+  opacity: 1;
+}
+
+/* ✨ Efecto movimiento del brillo */
+@keyframes glowMove {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+/* Hover del botón */
+.btn:hover {
+  background: #ff70d4;
+  transform: scale(1.05);
+  box-shadow: 0 0 25px rgba(255, 83, 192, 0.8);
+}
+
+
+/* 🌸 IMAGE */
+.home-img {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  animation: slideIn 1.5s ease forwards;
+}
+
+.home-img img {
+  width: 500px;
+  border-radius: 50%;
+  transition: 0.4s;
+  position: relative;
+  top: -40px;
+}
+
+.home-img img:hover {
+  transform: scale(1.08);
+}
+
+/* 🌟 ANIMATIONS */
+@keyframes fadeInLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-80px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateX(80px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+/* 📱 RESPONSIVE DESIGN */
+@media (max-width: 992px) {
+  .home {
+    flex-direction: column-reverse;
+    text-align: center;
+    padding: 120px 40px 60px;
+  }
+
+  .home-text {
+    max-width: 100%;
+  }
+
+  .home-img img {
+    width: 240px;
+    top: 0;
+    margin-bottom: 25px;
+  }
+
+  nav ul {
+    gap: 20px;
+  }
+}
+
+/* 🌸 ABOUT ME SECTION */
+.about {
+  position: relative;
+  min-height: 100vh;
+  padding: 120px 100px;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 0;
+  overflow: hidden;
+  border-radius: 40px; /* 🔹 redondea toda la sección */
+}
+
+/* ✨ Borde translúcido más suave */
+.about::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  margin: auto;
+  width: 92%;
+  height: 80%;
+  border-radius: 35px;
+  background: linear-gradient(
+    145deg,
+    rgba(0, 0, 0, 0.25),
+    rgba(255, 255, 255, 0.05)
+  );
+  border: 1.5px solid rgba(255, 255, 255, 0.25);
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+  z-index: 0;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.25); /* 🔹 sombra más sutil */
+}
+
+/* 📦 Contenedor principal */
+.about-container {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 60px;
+  max-width: 1200px;
+  width: 100%;
+}
+
+/* 📝 Texto */
+.about-text {
+  flex: 1;
+}
+
+.about-text h2 {
+  font-family: "Mont", sans-serif;
+  font-size: 3.2rem;
+  color: #FF57CB;
+  margin-bottom: 20px;
+  font-weight: 700;
+  text-align: center;
+  letter-spacing: 2px;
+  margin-top: -50px;
+}
+
+.about-text p {
+  font-size: 1.3rem;
+  line-height: 1.7;
+  margin-bottom: 20px;
+  color: var(--color-white);
+}
+
+/* 📸 Galería */
+.about-gallery {
+  flex: 1;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 15px;
+}
+
+.about-gallery img {
+  width: 100%;
+  height: 280px;
+  object-fit: cover;
+  border-radius: 15px;
+  border: 2px solid rgba(255, 255, 255, 0.7); /* ✨ borde blanco translúcido */
+  background: linear-gradient(145deg, #845DEB, #F1B7FF);
+  background-clip: padding-box;
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.2); /* 🔹 sombra más limpia */
+}
+
+.about-gallery img:hover {
+  transform: scale(1.05);
+  box-shadow: 0 8px 25px rgba(255, 255, 255, 0.3);
+}
+
+/* 📱 Responsive */
+@media (max-width: 992px) {
+  .about-container {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .about-gallery {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+/* ✨ Animaciones */
+.reveal {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: all 0.8s ease;
+}
+
+.reveal.active {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* 🌈 Scroll fluido */
+html,
+body {
+  scroll-behavior: smooth;
+  scroll-snap-type: y mandatory;
+}
+
+section {
+  scroll-snap-align: start;
+}
+
+/* 🌸 PORTFOLIO SECTION */
+
+
+.portfolio {
+  position: relative;
+  min-height: 100vh;
+  padding: 100px 80px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  border-radius: 40px;
+  color: #fff;
+ 
+}
+
+/* ✨ Borde translúcido */
+.portfolio::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  width: 92%;
+  height: 92%;
+  margin: auto;
+  border-radius: 35px;
+  background: linear-gradient(
+    145deg,
+    rgba(0, 0, 0, 0.25),
+    rgba(255, 255, 255, 0.08)
+  );
+  border: 2px solid rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+  z-index: 0;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.25);
+}
+
+.portfolio-container {
+  position: relative;
+  z-index: 2;
+  max-width: 1200px;
+  width: 100%;
+  text-align: center;
+}
+
+
+
+/* 🔹 Botones de pestañas */
+/* 🌸 Botones de pestañas grandes */
+.portfolio-tabs {
+  display: flex;
+  justify-content: center;
+  gap: 25px;
+  margin-bottom: 50px;
+  flex-wrap: wrap;
+}
+
+.tab-btn {
+  flex: 1; /* ocupa el mismo ancho que los otros */
+  max-width: 320px; /* tamaño máximo para no romper en pantallas grandes */
+  background: rgba(255, 255, 255, 0.08);
+  border: 2px solid rgba(255, 255, 255, 0.4);
+  color: #fff;
+  padding: 20px 0;
+  border-radius: 20px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-size: 1.3rem;
+  letter-spacing: 1px;
+  font-weight: 600;
+  backdrop-filter: blur(4px);
+  box-shadow: 0 0 10px rgba(255, 255, 255, 0.1);
+}
+
+.tab-btn:hover,
+.tab-btn.active {
+  background: linear-gradient(90deg, #845DEB, #F1B7FF);
+  border-color: #FF57CB;
+  color: #fff;
+  box-shadow: 0 0 15px rgba(255, 87, 203, 0.6);
+  transform: translateY(-3px);
+}
+
+/* 📱 Responsive */
+@media (max-width: 768px) {
+  .tab-btn {
+    max-width: 100%;
+  }
+}
+
+
+.tab-btn.active,
+.tab-btn:hover {
+  background: #FF57CB;
+  border-color: #FF57CB;
+}
+
+/* 🔹 Contenido */
+.tab-content {
+  display: none;
+}
+
+.tab-content.active {
+  display: block;
+  animation: fadeIn 0.6s ease;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* 🔹 Grillas organizadas */
+.grid {
+  display: grid;
+  justify-content: center;
+  align-items: start;
+  gap: 25px;
+}
+
+/* 🌸 Projects y Certificates → 3 columnas por fila */
+#projects .grid,
+#certificates .grid {
+  grid-template-columns: repeat(3, 1fr);
+}
+
+/* 🌸 Skills → 6 columnas por fila */
+#skills .grid {
+  grid-template-columns: repeat(6, 1fr);
+}
+
+/* 🩵 Ajuste general para centrar y limitar ancho */
+.tab-content .grid {
+  max-width: 1300px;
+  margin: 0 auto;
+   gap: 30px; /* más separación entre las tarjetas */
+}
+
+/* 💎 Tarjetas generales */
+.card {
+  background: rgba(300, 255, 255, 0.1);
+  border-radius: 18px;
+  padding: 20px;
+  text-align: center;
+  backdrop-filter: blur(4px);
+  border: 1.5px solid rgba(255, 255, 255, 0.3);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 6px 20px rgba(255, 255, 255, 0.2);
+}
+
+/* 🖼️ Imagen dentro de las tarjetas */
+.card img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 12px;
+  margin-bottom: 18px;
+  border: 1px ;
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+
+.certificates-card{
+background: rgba(300, 255, 255, 0.1);
+  border-radius: 18px;
+  padding: 20px;
+  text-align: center;
+  backdrop-filter: blur(4px);
+  border: 1.5px solid rgba(255, 255, 255, 0.3);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.certificates-card:hover{
+  transform: translateY(-6px);
+  box-shadow: 0 6px 20px rgba(255, 255, 255, 0.2);
+}
+
+
+.certificates-card img {
+width: 100%;
+  height: 300px;
+  object-fit: cover;
+  border-radius: 12px;
+  margin-bottom: 18px;
+  border: 1px ;
+    cursor: pointer;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+
+}
+.certificates-card img:hover {
+  transform: scale(1.03);
+  box-shadow: 0 8px 25px rgba(255, 87, 203, 0.4);
+}
+
+/* ✍️ Textos */
+.card h3 {
+  font-size: 1.3rem;
+  color: #FF57CB;
+  margin-bottom: 10px;
+}
+
+.card p {
+  font-size: 1rem;
+  color: #eaeaea;
+  margin-bottom: 15px;
+}
+
+/* 🔘 Botón dentro de cada tarjeta */
+.card .btn {
+  background: #FF57CB;
+  border: none;
+  color: white;
+  padding: 8px 20px;
+  border-radius: 25px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.card .btn:hover {
+  background: #ff85da;
+  box-shadow: 0 0 10px rgba(255, 133, 218, 0.6);
+}
+
+/* 🧠 Skills */
+#skills .grid .skill-card {
+  background: rgba(255, 255, 255, 0.08);
+  border-radius: 10px;
+  padding: 20px;
+  text-align: center;
+  border: 1.5px solid rgba(255, 255, 255, 0.3);
+  transition: transform 0.3s ease;
+}
+
+#skills .grid .skill-card:hover {
+  transform: scale(1.05);
+}
+
+.skill-card img {
+  width: 90px;
+  height: 90px;
+  margin-bottom: 5px;
+}
+
+.skill-card p {
+  color: #fff;
+  font-size: 1rem;
+}
+
+/* 📱 Responsive */
+@media (max-width: 1200px) {
+  #projects .grid,
+  #certificates .grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  #skills .grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  #projects .grid,
+  #certificates .grid {
+    grid-template-columns: 1fr;
+  }
+  #skills .grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+

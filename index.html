@@ -1,33 +1,194 @@
-<!doctype html>
-<html lang="es">
+<!DOCTYPE html>
+<html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>CV_online_Yuriana — Prueba</title>
-  <link rel="stylesheet" href="css/styles.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Yuriana Cantillo | Portfolio</title>
+  <link rel="stylesheet" href="css/styles.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
-  <header>
-    <h1>CV_online_Yuriana</h1>
-    <p>Prueba rápida para comprobar guardado y despliegue</p>
+
+  <!-- Navbar -->
+  <header class="navbar">
+    <div class="logo">PORT<span>FOLIO</span></div>
+    <nav>
+      <ul>
+        <li><a href="#home" class="active">Home</a></li>
+        <li><a href="#about">About me</a></li>
+        <li><a href="#portfolio">Portfolio</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
   </header>
 
-  <main>
-    <section id="status">
-      <h2>Estado del proyecto</h2>
-      <p id="lastUpdated">Última actualización: —</p>
-      <button id="updateBtn">Actualizar hora (prueba)</button>
-    </section>
+  <!-- Home Section -->
+  <section id="home" class="home">
+      <div class="sparkles"></div>
+    <div class="home-text">
+      <h2>Hello! My name is</h2>
+      <h1><span class="typing">YURIANA CANTILLO</span></h1>
+      <h3>I am a Systems Engineer and Front-End Developer.</h3>
+      <p>
+        I’m passionate about building digital experiences that are both intuitive and visually engaging.<br>
+        I blend the logic of coding with the creativity of design to create interfaces that connect people and technology.
+      </p>
+      <a href="https://yuyucasa25.github.io/Certificados-/CV_Yuriana%20Cantillo.pdf" 
+   class="btn" 
+   target="_blank" 
+   rel="noopener noreferrer">
+   DOWNLOAD CV
+</a>
 
-    <section id="about">
-      <h2>Sobre mí</h2>
-      <p>Soy Yuriana — aquí irá mi portafolio. Esta es una prueba rápida para confirmar que GitHub guarda mis cambios.</p>
-    </section>
-  </main>
+    </div>
 
-  <footer>
-    <p>Hecho con ❤️ por Yuriana</p>
-  </footer>
+    <div class="home-img">
+      <img src="assets/images/yuriana.png" alt="Yuriana Cantillo">
+    </div>
+  </section>
+
+
+  <!-- About Me Section -->
+<section id="about" class="about">
+  <div class="about-container">
+<div class="about-text reveal">
+    <div class="about-text">
+      <h2>ABOUT ME</h2>
+      <p>
+        I’m Yuriana Cantillo, a 23-year-old Systems Engineer from Cartagena, Colombia.  
+        I’m passionate about technology, design, and creating digital experiences that connect with people.  
+        Beyond coding, I love reading, skating, designing, and growing my small business — Atenas.
+      </p>
+      <p>
+       My goal is to keep growing as a front-end developer, creating
+ experiences that inspire and add real value to people’s lives.
+      </p>
+    </div>
+</div>
+    <div class="about-gallery">
+      <img src="assets/images/roller.jpg" alt="Yuriana roller">
+      <img src="assets/images/programming.jpg" alt="Yuriana programming">
+      <img src="assets/images/book.jpg" alt="Yuriana book">
+      <img src="assets/images/bussines.jpg" alt="Yuriana business">
+    </div>
+
+  </div>
+</section>
+
+<!-- 🌸 PORTFOLIO SECTION -->
+<section id="portfolio" class="portfolio">
+  <div class="portfolio-container">
+
+
+
+    <!-- 🔹 Botones de pestañas -->
+    <div class="portfolio-tabs">
+      <button class="tab-btn active" data-tab="projects">PROJECTS</button>
+      <button class="tab-btn" data-tab="certificates">CERTIFICATES</button>
+      <button class="tab-btn" data-tab="skills">SKILLS</button>
+    </div>
+
+    <!-- 🔹 Projects -->
+    <div class="tab-content active" id="projects">
+      <div class="grid">
+        <div class="card">
+          <img src="assets/images/CRM.png" alt="CRM ">
+          <h3>CRM Atenas Dashboard</h3>
+          <p>Tool to manage clients and monitor sales efficiently. .</p>
+          <a href="https://github.com/yuyucasa25/CRM_Atenas_Adviser" target="_blank" class="btn">View on GitHub</a>
+        </div>
+        <div class="card">
+          <img src="assets/images/CuenTas.png" alt="CuenTas ">
+          <h3>Software CuenTas</h3>
+          <p>Web app to track and analyze personal income and expenses..</p>
+          <a href="https://github.com/yuyucasa25/Proyecto_CuenTas" target="_blank" class="btn">View on GitHub</a>
+        </div>
+        <div class="card">
+          <img src="assets/images/dashboard.png" alt="dashboard">
+          <h3>Dashboard UX</h3>
+          <p>Interactive panel showing key sales and  performance metrics.</p>
+          <a href="https://github.com/yuyucasa25/Dashboard_FastCode_UX" target="_blank" class="btn">View on GitHub</a>
+        </div>
+        <div class="card">
+          <img src="assets/images/Generador.png" alt="Generador">
+          <h3>Image generator</h3>
+          <p>Responsive personal portfolio website built using HTML, CSS, and JavaScript.</p>
+          <a href="https://github.com/tuusuario/proyecto4" target="_blank" class="btn">View on GitHub</a>
+        </div>
+        <div class="card">
+          <img src="assets/images/juego.png" alt="juego">
+          <h3>Didactical game</h3>
+          <p>Task management app using React Hooks and local storage.</p>
+          <a href="https://github.com/tuusuario/proyecto5" target="_blank" class="btn">View on GitHub</a>
+        </div>
+        <div class="card">
+          <img src="assets/images/calculadora.png" alt="calculadora">
+          <h3>Web calculator</h3>
+          <p>Real-time chat application with Firebase Auth and Firestore.</p>
+          <a href="https://github.com/tuusuario/proyecto6" target="_blank" class="btn">View on GitHub</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- 🔹 Certificates -->
+    <div class="tab-content" id="certificates">
+      <div class="grid">
+        <div class="certificates-card">
+           <a href="https://yuyucasa25.github.io/Certificados-/diploma-html-css-2019.pdf" target="_blank">
+          <img src="assets/images/Certificado_HTML Y CSS.png" alt="">
+          </a></div>
+
+        <div class="certificates-card">
+           <a href="https://yuyucasa25.github.io/Certificados-/diploma-programacion-basica.pdf" target="_blank">
+          <img src="assets/images/Certificado_Programacion basica.png" alt="">
+        </a> </div>
+
+        <div class="certificates-card">
+           <a href="https://yuyucasa25.github.io/Certificados-/diploma-facebook-ads-2020.pdf" target="_blank">
+          <img src="assets/images/Certificado_Facebook.png" alt="">
+        </a> </div>
+
+        <div class="certificates-card">
+           <a href="https://yuyucasa25.github.io/Certificados-/diploma-instagram.pdf" target="_blank">
+          <img src="assets/images/Certificado_Instagram.png" alt=""> 
+        </a></div>
+
+        <div class="certificates-card">
+           <a href="https://yuyucasa25.github.io/Certificados-/diploma-html-css-2019.pdf" target="_blank">
+          <img src="assets/images/Certificado_HTML Y CSS.png" alt=""> 
+        </a></div>
+
+        <div class="certificates-card">
+           <a href="https://yuyucasa25.github.io/Certificados-/diploma-instagram.pdf" target="_blank">
+          <img src="assets/images/Certficado_ads.png" alt="">
+        </a> </div>
+      </div>
+    </div>
+
+    <!-- 🔹 Skills -->
+    <div class="tab-content" id="skills">
+      <div class="grid skills-grid">
+        <div class="skill-card"><img src="assets/icons/htmlpng.png"><p>HTML5</p></div>
+        <div class="skill-card"><img src="assets/icons/css.png"><p>CSS3</p></div>
+        <div class="skill-card"><img src="assets/icons/JavaScrip.png"><p>JavaScript</p></div>
+        <div class="skill-card"><img src="assets/icons/React.png"><p>React.js</p></div>
+        <div class="skill-card"><img src="assets/icons/Vue_js.png"><p>Vue.js</p></div>
+        <div class="skill-card"><img src="assets/icons/python.png"><p>Python</p></div>
+        <div class="skill-card"><img src="assets/icons/bootstrap.png"><p>bootstrap</p></div>
+        <div class="skill-card"><img src="assets/icons/MySQL.png"><p>MySQL</p></div>
+        <div class="skill-card"><img src="assets/icons/Postgresql.png"><p>postgreSQL</p></div>
+        <div class="skill-card"><img src="assets/icons/canva.png"><p>Canva</p></div>
+        <div class="skill-card"><img src="assets/icons/llustrator.png"><p>GitHub</p></div>
+        <div class="skill-card"><img src="assets/icons/Adobe_XD.png"><p>Adobe XD</p></div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+  
 
   <script src="js/script.js"></script>
 </body>
