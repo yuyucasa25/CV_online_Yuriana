@@ -927,6 +927,11 @@ width: 100%;
   }
 }
 
+
+
+
+
+
 /* 🌸📱 RESPONSIVE FIXES */
 
 /* Tablets (hasta 992px) */
@@ -1175,5 +1180,148 @@ width: 100%;
 
   .footer {
     font-size: 0.8rem;
+  }
+}
+
+/* 🌸 NAVBAR RESPONSIVE FIX */
+.menu-toggle {
+  display: none;
+  cursor: pointer;
+  font-size: 2rem;
+  color: white;
+  z-index: 200;
+}
+
+@media (max-width: 768px) {
+  .navbar {
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 15px 25px;
+  }
+
+  .menu-toggle {
+    display: block;
+  }
+
+  nav ul {
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    background: rgba(132, 93, 235, 0.9);
+    width: 100%;
+    padding: 15px 0;
+    position: absolute;
+    top: 70px;
+    left: 0;
+    border-radius: 0 0 15px 15px;
+    z-index: 100;
+  }
+
+  nav ul.show {
+    display: flex;
+  }
+
+  nav ul li {
+    margin: 10px 0;
+  }
+
+  nav ul li a {
+    font-size: 1.1rem;
+  }
+
+  /* Ajustes para home */
+  .home {
+    flex-direction: column-reverse;
+    text-align: center;
+    padding: 100px 30px;
+  }
+
+  .home-img img {
+    width: 220px;
+    margin-top: 15px;
+  }
+
+  .home-text h1 {
+    font-size: 2rem;
+  }
+
+  /* Ajustes generales */
+  section {
+    scroll-snap-align: none; /* evita “saltos” raros al deslizar */
+  }
+}
+/* 🌈 AJUSTE HOME PARA CELULARES */
+@media (max-width: 768px) {
+  .home {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 120px 25px 60px;
+  }
+
+  .home-text {
+    max-width: 100%;
+    margin-bottom: 20px;
+  }
+
+  .home-img {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .home-img img {
+    width: 240px;
+    height: auto;
+    border-radius: 50%;
+    margin: 0 auto;
+    position: relative;
+    top: 0;
+  }
+
+  .home-text h1 {
+    font-size: 2.4rem;
+  }
+
+  .home-text p {
+    font-size: 1.05rem;
+  }
+}
+
+/* 💜 AJUSTE ABOUT PARA CELULARES */
+@media (max-width: 768px) {
+  .about {
+    padding: 100px 30px;
+    min-height: auto;
+  }
+
+  .about-container {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 30px;
+  }
+
+  .about-text h2 {
+    font-size: 2.2rem;
+  }
+
+  .about-text p {
+    font-size: 1.05rem;
+    line-height: 1.6;
+  }
+
+  .about-gallery {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  .about-gallery img {
+    width: 85%;
+    max-width: 320px;
+    margin: 0 auto;
+    border-radius: 20px;
+    height: auto;
   }
 }
