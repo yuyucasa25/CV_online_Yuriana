@@ -54,3 +54,66 @@ window.addEventListener("scroll", () => {
   });
 });
 
+
+// 🌸 Selección de elementos
+const form = document.querySelector(".contact-form");
+const notification = document.createElement("div");
+notification.classList.add("notification");
+document.body.appendChild(notification);
+
+// 🌟 Función para mostrar notificaciones
+function showNotification(message, isSuccess = true) {
+  notification.textContent = message;
+  notification.style.background = isSuccess
+    ? "rgba(255, 87, 203, 0.95)" // fucsia bonito
+    : "rgba(255, 50, 50, 0.9)"; // rojo suave si hay error
+
+  notification.classList.add("show");
+
+  setTimeout(() => {
+    notification.classList.remove("show");
+  }, 4000);
+}
+
+// ✨ Validación del formulario
+form.addEventListener("submit", async (e) => {
+  e.preventDefault(); // Evita el reload automático
+
+  const nombre = form.querySelector("#nombre").value.trim();
+  const correo = form.querySelector("#correo").value.trim();
+  const mensaje = form.querySelector("#mensaje").value.trim();
+
+  // 🩷 Validar nombre
+  if (nombre.length < 3) {
+    showNotification("Por favor escribe tu nombre completo 💬", false);
+    return;
+  }
+
+  // 💌 Validar correo con expresión regular
+  const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+  if (!emailRegex.test(correo)) {
+    showNotification("Por favor escribe un correo válido 📧", false);
+    return;
+  }
+
+  // 📝 Validar mensaje
+  if (mensaje.length < 10) {
+    showNotification("Tu mensaje es muy corto, cuéntame más 💌", false);
+    return;
+  }
+
+  // ✅ Enviar formulario a Formspree
+  const formData = new FormData(form);
+  const response = await fetch(form.action, {
+    method: "POST",
+    body: formData,
+    headers: { Accept: "application/json" },
+  });
+
+  if (response.ok) {
+    showNotification("✅ Mensaje enviado con Exito 💌!");
+    form.reset(); // Limpia los campos
+  } else {
+    showNotification("❌ Ocurrió un error al enviar. Intenta nuevamente.", false);
+  }
+});

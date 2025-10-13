@@ -3,12 +3,11 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<link rel="icon" type="image/png" href="assets/icons/icon.png" sizes="64x64">
+
   <title>Yuriana Cantillo | Portfolio</title>
   <link rel="stylesheet" href="css/styles.css" />
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
-</head>
+  </head>
 <body>
 
   <!-- Navbar -->
@@ -77,10 +76,9 @@
   </div>
 </section>
 
-<!-- 🌸 PORTFOLIO SECTION -->
+<!-- PORTFOLIO SECTION -->
 <section id="portfolio" class="portfolio">
   <div class="portfolio-container">
-
 
 
     <!-- 🔹 Botones de pestañas -->
@@ -188,7 +186,31 @@
   </div>
 </section>
 
-  
+<!-- 💌 CONTACT ME SECTION -->
+<section id="contact" class="contact">
+  <div class="contact-container">
+    <div class="contact-box">
+      <h2>CONTACT ME</h2>
+
+      <form class="contact-form" action="https://formspree.io/f/mrbyoerw" method="POST">
+        <input type="text" id="nombre" name="nombre" placeholder="Name" required>
+        <input type="email" id="correo" name="correo" placeholder="Email" required>
+        <textarea id="mensaje" name="mensaje" rows="5" placeholder="Messages" required></textarea>
+        <button type="submit">Send Messages</button>
+      </form>
+    </div>
+  </div>
+</section>
+
+<!-- Notificación flotante -->
+<div id="notification" class="notification"></div>
+
+<section id="footer-section">
+  <footer class="footer">
+    <p>© 2025 All rights reserved | <span>By Yuriana Cantillo</span></p>
+  </footer>
+</section>
+
 
   <script src="js/script.js"></script>
 </body>

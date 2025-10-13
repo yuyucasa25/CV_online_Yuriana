@@ -288,7 +288,7 @@ nav ul li a:hover {
   }
 }
 
-/* 🌸 ABOUT ME SECTION */
+/* ABOUT ME SECTION */
 .about {
   position: relative;
   min-height: 100vh;
@@ -696,3 +696,484 @@ width: 100%;
   }
 }
 
+/* 💌 CONTACT SECTION */
+.contact {
+  position: relative;
+  min-height: 100vh;
+  padding: 120px 100px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  border-radius: 40px;
+  overflow: hidden;
+}
+
+/* 🔮 Borde translúcido general */
+.contact::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  margin: auto;
+  width: 92%;
+  height: 90%;
+  border-radius: 35px;
+  background: linear-gradient(
+    145deg,
+    rgba(0, 0, 0, 0.25),
+    rgba(255, 255, 255, 0.05)
+  );
+  border: 1.5px solid rgba(255, 255, 255, 0.25);
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+  z-index: 0;
+}
+
+/* 🩵 Contenedor principal */
+.contact-container {
+  position: relative;
+  z-index: 2;
+  max-width: 600px;
+  width: 100%;
+  text-align: center;
+}
+
+/* 🌷 Cajita rosada interior */
+.contact-box {
+  background: linear-gradient(to bottom, #fcdafc, #f5b7ff);
+  border-radius: 25px;
+  padding: 50px 40px;
+  box-shadow: 0 8px 20px rgba(132, 93, 235, 0.2);
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+
+/* 💫 Efecto al pasar el mouse */
+.contact-box:hover {
+  transform: scale(1.03);
+  box-shadow: 0 12px 25px rgba(132, 93, 235, 0.35);
+}
+
+/* 💖 Título dentro del cuadro */
+.contact-box h2 {
+  font-family: "Mont", sans-serif;
+  font-size: 3rem;
+  color: #FF57CB;
+  font-weight: 700;
+  letter-spacing: 2px;
+  margin-bottom: 30px;
+  text-align: center;
+}
+
+/* 🧁 Formulario */
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+/* Inputs y textarea */
+.contact-form input,
+.contact-form textarea {
+  width: 100%;
+  padding: 14px;
+  border: none;
+  border-radius: 10px;
+  font-size: 1rem;
+  font-family: "Poppins", sans-serif;
+  outline: none;
+  color: #333;
+}
+
+.contact-form input::placeholder,
+.contact-form textarea::placeholder {
+  color: #a75fcf;
+}
+
+/* 💕 Botón */
+.contact-form button {
+  background: linear-gradient(90deg, #ff57cb, #ff8ee7);
+  color: white;
+  border: none;
+  padding: 14px;
+  font-size: 1.1rem;
+  font-weight: 700;
+  border-radius: 300px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+/* ✨ Efecto al pasar el mouse */
+.contact-form button:hover {
+  transform: scale(1.07);
+  background: linear-gradient(90deg, #ff8ee7, #ff57cb);
+  box-shadow: 0 0 1px #ff57cb;
+}
+
+/* 💥 Efecto al hacer clic */
+.contact-form button:active {
+  transform: scale(0.85);
+}
+
+/* 💫 Animación de aparición */
+.reveal {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: all 0.8s ease;
+}
+
+.reveal.active {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* 📱 Responsive */
+@media (max-width: 768px) {
+  .contact {
+    padding: 80px 40px;
+  }
+
+  .contact-box {
+    padding: 40px 25px;
+  }
+
+  .contact-box h2 {
+    font-size: 2.4rem;
+  }
+}
+
+/* 🌸 Notificación visual mejorada */
+.notification {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(0.9);
+  width: 380px; /* 🔹 Más cuadrada */
+  min-height: 120px; /* 🔹 Altura mínima */
+  background: rgba(255, 255, 255, 0.15);
+  border: 2px solid rgba(255, 255, 255, 0.4);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  color: #fff;
+  padding: 25px 30px;
+  border-radius: 25px;
+  font-size: 1.3rem;
+  font-weight: 700;
+  text-align: center;
+  line-height: 1.4;
+  opacity: 0;
+  pointer-events: none;
+  z-index: 1000;
+  transition: all 0.3s ease;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.25);
+}
+
+/* ✨ Animación de aparición */
+.notification.show {
+  opacity: 1;
+  pointer-events: auto;
+  transform: translate(-50%, -50%) scale(1);
+}
+
+/* 💖 Tipos de mensajes */
+.notification.success {
+  background: linear-gradient(135deg, #fdaee8);
+  border-color: rgba(255, 255, 255, 0.6);
+  box-shadow: 0 0 20px  #fdaee8;
+}
+
+.notification.error {
+  background: linear-gradient(135deg, #ff4b4b, #ff8e8e);
+  border-color: rgba(255, 255, 255, 0.6);
+  box-shadow: 0 0 20px rgba(255, 100, 100, 0.5);
+}
+
+
+/* 🌸 FOOTER */
+.footer {
+  background: linear-gradient(to right, #b095fb, #F1B7FF);
+  text-align: center;
+  padding: 25px 0;
+  font-family: "Poppins", sans-serif;
+  font-size: 1rem;
+  color: #fff;
+  position: relative;
+  z-index: 5;
+  border-top: 2px solid rgba(255, 255, 255, 0.3);
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+}
+
+.footer span {
+  color: #FF57CB;
+  font-weight: 600;
+  transition: color 0.3s ease;
+}
+
+.footer span:hover {
+  color: #fff;
+}
+
+/* 💫 Animación sutil de aparición */
+.footer p {
+  opacity: 0;
+  transform: translateY(10px);
+  animation: fadeUp 1s ease forwards;
+}
+
+@keyframes fadeUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* 🌸📱 RESPONSIVE FIXES */
+
+/* Tablets (hasta 992px) */
+@media (max-width: 992px) {
+  .navbar {
+    padding: 15px 30px;
+  }
+
+  nav ul {
+    gap: 20px;
+  }
+
+  .home {
+    flex-direction: column-reverse;
+    text-align: center;
+    padding: 100px 40px 40px;
+  }
+
+  .home-text {
+    max-width: 100%;
+  }
+
+  .home-img img {
+    width: 280px;
+    margin-bottom: 25px;
+  }
+
+  .about {
+    padding: 100px 50px;
+  }
+
+  .about-container {
+    flex-direction: column;
+    gap: 30px;
+  }
+
+  .about-gallery img {
+    height: 200px;
+  }
+
+  .portfolio {
+    padding: 80px 50px;
+  }
+
+  .tab-btn {
+    max-width: 250px;
+    font-size: 1rem;
+    padding: 12px 0;
+  }
+
+  .card img,
+  .certificates-card img {
+    height: 180px;
+  }
+
+  #skills .grid .skill-card img {
+    width: 70px;
+    height: 70px;
+  }
+
+  .contact {
+    padding: 100px 40px;
+  }
+
+  .contact-box {
+    padding: 40px 30px;
+  }
+
+  .contact-box h2 {
+    font-size: 2.4rem;
+  }
+}
+
+/* Celulares grandes (hasta 768px) */
+@media (max-width: 768px) {
+  .navbar {
+    flex-direction: column;
+    gap: 10px;
+    padding: 15px 10px;
+  }
+
+  nav ul {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 15px;
+  }
+
+  .logo {
+    font-size: 1.4rem;
+  }
+
+  .home h1 {
+    font-size: 2.4rem;
+  }
+
+  .home h2 {
+    font-size: 1.2rem;
+  }
+
+  .home p {
+    font-size: 1rem;
+  }
+
+  .btn {
+    padding: 12px 24px;
+    font-size: 1rem;
+  }
+
+  .about-text h2 {
+    font-size: 2rem;
+  }
+
+  .about-text p {
+    font-size: 1.1rem;
+  }
+
+  .about-gallery {
+    grid-template-columns: 1fr;
+  }
+
+  .about-gallery img {
+    height: 240px;
+  }
+
+  .portfolio {
+    padding: 60px 25px;
+  }
+
+  .tab-btn {
+    width: 100%;
+    max-width: none;
+  }
+
+  #projects .grid,
+  #certificates .grid {
+    grid-template-columns: 1fr;
+  }
+
+  #skills .grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .card,
+  .certificates-card,
+  .skill-card {
+    padding: 15px;
+  }
+
+  .card img,
+  .certificates-card img {
+    height: 160px;
+  }
+
+  .skill-card img {
+    width: 60px;
+    height: 60px;
+  }
+
+  .contact-box {
+    padding: 30px 20px;
+  }
+
+  .contact-box h2 {
+    font-size: 2rem;
+  }
+
+  .footer {
+    font-size: 0.9rem;
+    padding: 20px 10px;
+  }
+}
+
+/* Celulares pequeños (hasta 480px) */
+@media (max-width: 480px) {
+  .navbar {
+    padding: 10px;
+  }
+
+  nav ul {
+    gap: 10px;
+  }
+
+  .home {
+    padding: 80px 20px;
+  }
+
+  .home h1 {
+    font-size: 2rem;
+  }
+
+  .home h3 {
+    font-size: 1.1rem;
+  }
+
+  .home p {
+    font-size: 0.95rem;
+  }
+
+  .about {
+    padding: 80px 25px;
+  }
+
+  .about-text p {
+    font-size: 1rem;
+  }
+
+  .about-gallery img {
+    height: 200px;
+  }
+
+  .portfolio {
+    padding: 50px 20px;
+  }
+
+  .tab-btn {
+    font-size: 0.95rem;
+  }
+
+  .card img,
+  .certificates-card img {
+    height: 140px;
+  }
+
+  .skill-card img {
+    width: 50px;
+    height: 50px;
+  }
+
+  .contact-box {
+    padding: 25px 15px;
+  }
+
+  .contact-box h2 {
+    font-size: 1.8rem;
+  }
+
+  .contact-form input,
+  .contact-form textarea {
+    font-size: 0.95rem;
+  }
+
+  .notification {
+    width: 280px;
+    font-size: 1.1rem;
+  }
+
+  .footer {
+    font-size: 0.8rem;
+  }
+}
